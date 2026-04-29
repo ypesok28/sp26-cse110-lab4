@@ -1,0 +1,7 @@
+1. Line 9 prints "values added: 20"
+2. Line 13 prints "final result: 20"
+3. We should not use var, because there is no block scoping, as seen in the example. result is defined within the if statement, so it should only be able to be accessed in the if statement, but var allows it to survive outside the if statement even though it logically belongs in the if statement. This can create lots of issues with variables names and values being leaked from block to block. This can also lead to other issues such as accessing a var variable when it shouldn't be accessed, like before it's even declared which results in the value being undefined, so the bug goes under the radar.
+4. Line 9 prints "values added: 20"
+5. Line 13 will return an error because result was declared within the if statement block and "let" doesn't live outside the block scope, thus the line 13 reference to result will lead to a undefined reference error since the variable declaration of result doesn't live outside the if statement.
+6. Line 9 won't print anything because the program already crashed on line 7 when the function tried re assigning a value to a constant variable. So it doesn't make it to line 9.
+7. Line 13 will never print also because the program already threw on line 7 when the function tried reassigning a constant variable. Also even if it did reach line 13, it would still error because it's outside the scope of where the variable was declared.
